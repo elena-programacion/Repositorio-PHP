@@ -1,0 +1,149 @@
+Ejercicio 1.
+--------------------------------------
+<?php
+
+$altura = (float)readline("¿Cuánto mides?: ");
+$peso = (float)readline("¿Cuánto pesas?: ");
+$IMC = $peso / ($altura * $altura);
+echo $IMC;
+
+?>
+
+
+Ejercicio 2.
+--------------------------------------
+<?php
+
+$edad = (int)readline("¿Qué edad tienes?");
+
+if ($edad > 18) {
+    echo "Perfecto, puedes votar";
+} else {
+    echo "Aún no puedes votar";
+}
+
+?>
+
+
+Ejercicio 3.
+--------------------------------------
+<?php
+
+$n1 = (int)readline("Dime un número: ");
+$n2 = (int)readline("Dime otro número: ");
+
+echo "Los números impares entre $n1 y $n2 son: ";
+
+for ($i = $n1; $i <= $n2; $i++) {    
+    if ($i % 2 !== 0) {
+        echo "$i ";
+    }
+}
+
+?>
+
+
+Ejercicio 4.
+--------------------------------------
+<?php
+
+$num = 10;
+
+for ($i = $num; $i > 0; $i--)
+{
+	echo $i . "\n";
+}
+echo "Despegamos!";
+
+?>
+
+
+Ejercicio 5.
+--------------------------------------
+<?php
+
+$year1 = (int)readline("Dime un año: ");
+$year2 = (int)readline("Dime otro año: ");
+
+echo "Los años bisiestos entre $year1 y $year2 son: ";
+for ($i = $year1; $i <= $year2; $i++) {
+    if ((($i % 4 == 0) && ($i % 100 != 0)) || ($i % 400 == 0)) {
+        echo "$i ";
+    }
+}
+
+?>
+
+
+Ejercicio 6.
+--------------------------------------
+<?php
+
+$numero = 12;
+$intentos = 5;
+
+while ($intentos > 0) {
+	$adivinar = (int)readline("Trata de adivinar el número: ");
+	if ($adivinar != $numero) {
+		$intentos -= 1;
+		echo "No has adivinado, te quedan $intentos intentos. \n";
+		if ($intentos == 0) {
+			echo "Game Over. \n";
+		}
+	} else {
+		echo "¡Has ganado!. \n";
+		break;
+	}
+}
+
+?>
+
+
+Ejercicio 7.
+--------------------------------------
+<?php
+
+$cadena = "hacker";
+$cadena_mod = str_replace (['a', 'e', 'i', 'o'], ['4', '3', '1', '0'], $cadena);
+echo $cadena_mod;
+
+?>
+
+
+Ejercicio 8.
+--------------------------------------
+<?php
+
+echo "Buenas, elija una operación: \n";
+echo "0. Salir. \n";
+echo "1. Convertir euros a dólares. \n";
+echo "2. Convertir euros a yenes. \n";
+echo "3. Convertir euros a libras. \n";
+
+$opc = (int)readline(" ");
+
+while ($opc != 0) {
+	$euro = (float)readline("¿Cuántos euros quieres convertir?: ");
+	if ($opc == 1) {
+		$dolar = $euro * 1.08;
+		echo "Por tus $euro € te corresponden $dolar $ dólares.";
+		break;
+	}
+	elseif ($opc == 2) {
+		$yen = $euro * 167.70;
+		echo "Por tus $euro € te corresponden $yen ¥ yenes.";
+		break;
+	}
+	elseif ($opc == 3) {
+		$libra = $euro * 0.86;
+		echo "Por tus $euro € te corresponden $libra £ libras.";
+		break;
+	}
+	else {
+		echo "La operación debe ser 1, 2 o 3.";
+		break;
+	}
+}
+echo "Gracias por su tiempo.";
+
+?>
